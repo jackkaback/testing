@@ -1,22 +1,34 @@
 package main
+
 import "fmt"
 
 func main() {
 
-	// implicit setting a var
-	temp := 20
+	var x int64
+	var y int64
 
-	// semi-implicit setting a var
-	var t = 0
-
-
-	// explicit setting a var
-	var b int = 30
-
-	fmt.Println(b)
-	fmt.Println("hello world")
-	fmt.Print(temp)
-	for t = 0; t <= 9; t++ {
-		fmt.Println(t)
+	//get x and y vals
+	for {
+		fmt.Print("Enter height value: ")
+		_, _ = fmt.Scanf("%d", &y)
+		fmt.Println()
+		if y > 0 {
+			break
+		}
 	}
+
+	for {
+		fmt.Print("Enter width value: ")
+		_, _ = fmt.Scanf("%d", &x)
+		fmt.Println()
+		if x > 0 {
+			break
+		}
+	}
+
+	playingField := make([][]bool, y+2)
+	for i := range playingField {
+		playingField[i] = make([]bool, x+2)
+	}
+
 }
